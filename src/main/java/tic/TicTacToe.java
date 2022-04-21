@@ -10,7 +10,7 @@ public class TicTacToe {
 		   char[] ch = input.toCharArray();
 		  if(input.length()!=9)
 		  {
-			  return Evaluation.InvalidInput;
+			  return Evaluation.INVALIDINPUT;
 		  }
 		  for(int i=0;i<input.length();i++)
 		  {  
@@ -24,66 +24,65 @@ public class TicTacToe {
 		     }
 		   }
 		   int temp=Math.abs(xcount-ocount);
-		   if(temp<=1)
-		   {}
-		   else
+		   if(!temp<=1)
 		   {
-		      return Evaluation.UnreachableState;
+	               return Evaluation.UNREACHABLESTATE;
 		   }
+		 
 		   if(correct==1)
 		   {
 		      return result(ch);
 		   }
 		   else
 		   {
-		      System.out.println("ENTER CORRECT INPUT");
+		      logger.log("ENTER CORRECT INPUT");
 		   }
-	    return Evaluation.UnreachableState;
+	    return Evaluation.UNREACHABLESTATE;
 	  }
 	  public static Evaluation result(char[] data)
 	  {
-		  boolean xwins = false;
-		  boolean owins = false;
+		  boolean XWINS = false;
+		  boolean OWINS = false;
 	    if(data[0]=='X' && data[1]=='X' && data[2]=='X')
-	     xwins=true;
+	     XWINS=true;
 	    else if(data[3]=='X' && data[4]=='X' && data[5]=='X')
-	    	xwins=true;
+	    	XWINS=true;
 	     else if(data[6]=='X' && data[7]=='X' && data[8]=='X')
-	    	 xwins=true;
+	    	 XWINS=true;
 	     else if(data[0]=='X' && data[3]=='X' && data[6]=='X')
-	    	 xwins=true;
+	    	 XWINS=true;
 	     else if(data[1]=='X' && data[4]=='X' && data[7]=='X')
-	    	 xwins=true;
+	    	 XWINS=true;
 	     else if(data[2]=='X' && data[5]=='X' && data[8]=='X')
-	    	 xwins=true;
+	    	 XWINS=true;
 	     else if(data[0]=='X' && data[4]=='X' && data[8]=='X')
-	    	 xwins=true;
+	    	 XWINS=true;
 	     else if(data[6]=='X' && data[4]=='X' && data[2]=='X')
-	    	 xwins=true;
+	    	 XWINS=true;
 	     if(data[0]=='O' && data[1]=='O' && data[2]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[3]=='O' && data[4]=='O' && data[5]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[6]=='O' && data[7]=='O' && data[8]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[0]=='O' && data[3]=='O' && data[6]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[1]=='O' && data[4]=='O' && data[7]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[2]=='O' && data[5]=='O' && data[8]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[0]=='O' && data[4]=='O' && data[8]=='O')
-	    	 owins=true;
+	    	 OWINS=true;
 	     else if(data[6]=='O' && data[4]=='O' && data[2]=='O')
-	    	 owins=true;
-	     if(xwins==true && owins==true)
-	    	 return Evaluation.UnreachableState;
+	    	 OWINS=true;
+	     if(XWINS && OWINS)
+	    	 return Evaluation.UNREACHABLESTATE;
 	     else if(xwins)
-	    	 return Evaluation.Xwins;
+	    	 return Evaluation.XWINS;
 	     else if(owins)
-	    	 return Evaluation.Owins;
+	    	 return Evaluation.OWINS;
 	     else
-	    	 return Evaluation.NoWinner;
+	    	 return Evaluation.NOWINNER;
 	  }
 	  public static void main(String[] args)
 	  {
