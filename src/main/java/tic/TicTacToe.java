@@ -4,7 +4,9 @@ import java.util.*;
 public class TicTacToe {
 	  public static Evaluation evaluateBoard(String input) {
 		  input=input.toUpperCase();
-		  int xcount=0,ocount=0,correct=1;
+		  int xcount=0;
+	          int ocount=0;
+		  int correct=1;
 		   char[] ch = input.toCharArray();
 		  if(input.length()!=9)
 		  {
@@ -13,20 +15,29 @@ public class TicTacToe {
 		  for(int i=0;i<input.length();i++)
 		  {  
 		     if(ch[i]=='X')
+		     {
 		         xcount++;
+		     }
 		     else if(ch[i]=='O')
+		     {
 		         ocount++;
+		     }
 		   }
 		   int temp=Math.abs(xcount-ocount);
-		   if(temp<=1){}
+		   if(temp<=1)
+		   {}
 		   else
 		   {
-			   return Evaluation.UnreachableState;
+		      return Evaluation.UnreachableState;
 		   }
 		   if(correct==1)
-		    return result(ch);
+		   {
+		      return result(ch);
+		   }
 		   else
-		   System.out.println("ENTER CORRECT INPUT");
+		   {
+		      System.out.println("ENTER CORRECT INPUT");
+		   }
 	    return Evaluation.UnreachableState;
 	  }
 	  public static Evaluation result(char[] data)
