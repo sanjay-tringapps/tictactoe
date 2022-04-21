@@ -78,6 +78,6 @@ public class TicTacToe {
 	  {
 
 		  TicTacToe tictac = new TicTacToe();
-		  System.out.println(tictac.evaluateBoard("Oooxxx..."));
+		  logger.log(evaluateBoard("Oooxxx..."));
 	  }
 }
