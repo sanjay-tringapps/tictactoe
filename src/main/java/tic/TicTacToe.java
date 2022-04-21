@@ -77,7 +77,7 @@ public class TicTacToe {
 	  public static void main(String[] args)
 	  {
 
-		  TicTacToe tictac = new TicTacToe();
+		  
 		  logger.log(evaluateBoard("Oooxxx..."));
 	  }
 }
